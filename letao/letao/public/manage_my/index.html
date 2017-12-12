@@ -2,6 +2,34 @@
 <html lang="en">
 
 <head>
+    <script>
+        // 判断是否登陆
+        // [判断用户是否登陆]
+        // $.ajax({
+        //     url: '/employee/checkRootLogin',
+        //     success: function (backData) {
+        //         console.log(backData);
+        //         // 如果success 为true 登陆
+        //         // 如果error 为400 打回 login
+        //         if (backData.error == 400) {
+        //             window.location.href = './login.html';
+        //         }
+        //     }
+        // })
+        var xhr = new XMLHttpRequest();
+        // 参数3 是否使用异步 默认是 true
+        // 很少使用这种方式 这里只是为了 让后续代码不执行而已
+        xhr.open('get','/employee/checkRootLogin',false);
+        xhr.onload = function(){
+            var result = JSON.parse(xhr.responseText);
+            if(result.error==400){
+                window.location.href = './login.html';
+            }
+            // console.log(xhr.responseText);
+        }
+        xhr.send();
+
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">

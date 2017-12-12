@@ -1,18 +1,18 @@
 $(function () {
 
-    // 判断是否登陆
-    // [判断用户是否登陆]
-    $.ajax({
-        url: '/employee/checkRootLogin',
-        success: function (backData) {
-            console.log(backData);
-            // 如果success 为true 登陆
-            // 如果error 为400 打回 login
-            if (backData.error == 400) {
-                window.location.href = './login.html';
-            }
-        }
-    })
+    // // 判断是否登陆
+    // // [判断用户是否登陆]
+    // $.ajax({
+    //     url: '/employee/checkRootLogin',
+    //     success: function (backData) {
+    //         console.log(backData);
+    //         // 如果success 为true 登陆
+    //         // 如果error 为400 打回 login
+    //         if (backData.error == 400) {
+    //             window.location.href = './login.html';
+    //         }
+    //     }
+    // })
 
     // 找到header中的第一个a 点击 隐藏左边 变大 右边
     $(".lt_main a.glyphicon-qrcode").first().click(function () {
